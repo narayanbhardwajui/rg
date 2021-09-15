@@ -1,5 +1,6 @@
 $('.rg-home-slider').slick({
     dots: true,
+    arrows: false,
 });
 
 $('.rg-home-newslider').slick({
@@ -24,11 +25,20 @@ $('.rg-home-testm').slick({
 });
 
 /*ham menu toggle*/
-
 $('.rg-header-hamburger').on('click', function(e) {
   $('.rg-header-nav').toggleClass("show"); //you can list several class names 
   e.preventDefault();
 });
+
+/*mobile only click submenu*/
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  $('.rg-header-nav-item').on('click', function(e) {
+    $('.rg-header-submenu').toggleClass("show"); //you can list several class names
+    $('.rg-header-nav-item .fas').toggleClass("expanded");
+    rg-header-nav-link 
+    e.preventDefault();
+  });  
+ }
 
 /*accordin*/
 

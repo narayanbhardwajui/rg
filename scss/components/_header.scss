@@ -101,13 +101,35 @@
             font-weight: 500;
             text-transform: uppercase;
             display: block;
+            position: relative;
             @include lg {
                 font-size: toRem(16);
                 padding: 30px 15px;
             }
-
             &:hover {
                 color: var(--rg-primary);
+            }
+            .fa-angle-down {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 12px;
+                @include md {
+                    position: relative;
+                    right: auto;
+                    top: auto;
+                    transform: none;
+                }
+                &:before {
+                    content: "\f067";
+                    @include md {
+                        content: "\f107";
+                    }
+                }
+                &.expanded:before {
+                    content: "\f068";
+                }
             }
         }
         &.show {
@@ -132,6 +154,7 @@
             }
 
         }
+
     }
     &-submenu {
         background-color: var(--rg-white);
@@ -146,16 +169,18 @@
         display: block !important;
         border-radius: 5px;
         padding: 10px;
-        &:after {
-            content: "";
-            position: absolute;
-            top: -7px;
-            left: 20px;
-            width: 0;
-            height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-bottom: 7px solid var(--rg-white);
+        @include md {
+            &:after {
+                content: "";
+                position: absolute;
+                top: -7px;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                border-bottom: 7px solid var(--rg-white);
+            }
         }
         li:not(:last-child) {
             border-bottom: 1px solid #ddd;
@@ -164,13 +189,31 @@
             padding: 10px 15px;
             font-size: toRem(14);
         }
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+            background: transparent;
+            padding: 0;
+            position: relative;
+            left: auto;
+            min-width: none;
+            border-top: 1px solid rgba(255,255,255,0.5);
+            li:not(:last-child) {
+                border-bottom: 1px solid rgba(255,255,255,0.5);
+            }
+            .rg-header-nav-link {
+                padding-left: 30px;
+            }
+        }
     }
     &-hamburger {
         cursor: pointer;
         width: 35px;
         height: 35px;
+        text-align: right;
         > svg {
-            width: 26px;
+            width: 24px;
         }
         @include lg {
             display: none;

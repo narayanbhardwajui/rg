@@ -568,6 +568,7 @@ a {
   font-weight: 500;
   text-transform: uppercase;
   display: block;
+  position: relative;
 }
 
 @media (min-width: 992px) {
@@ -579,6 +580,37 @@ a {
 
 .rg-header-nav-link:hover {
   color: var(--rg-primary);
+}
+
+.rg-header-nav-link .fa-angle-down {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .rg-header-nav-link .fa-angle-down {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+  }
+}
+
+.rg-header-nav-link .fa-angle-down:before {
+  content: "\f067";
+}
+
+@media (min-width: 768px) {
+  .rg-header-nav-link .fa-angle-down:before {
+    content: "\f107";
+  }
+}
+
+.rg-header-nav-link .fa-angle-down.expanded:before {
+  content: "\f068";
 }
 
 .rg-header-nav.show {
@@ -627,16 +659,18 @@ a {
   padding: 10px;
 }
 
-.rg-header-submenu:after {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: 20px;
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid var(--rg-white);
+@media (min-width: 768px) {
+  .rg-header-submenu:after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid var(--rg-white);
+  }
 }
 
 .rg-header-submenu li:not(:last-child) {
@@ -648,14 +682,35 @@ a {
   font-size: 0.875rem;
 }
 
+.rg-header-submenu.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+  background: transparent;
+  padding: 0;
+  position: relative;
+  left: auto;
+  min-width: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.rg-header-submenu.show li:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.rg-header-submenu.show .rg-header-nav-link {
+  padding-left: 30px;
+}
+
 .rg-header-hamburger {
   cursor: pointer;
   width: 35px;
   height: 35px;
+  text-align: right;
 }
 
 .rg-header-hamburger > svg {
-  width: 26px;
+  width: 24px;
 }
 
 @media (min-width: 992px) {
