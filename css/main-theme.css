@@ -423,24 +423,6 @@ a {
   border-radius: 10px;
 }
 
-.btn-icon {
-  position: relative;
-}
-
-.btn-icon::after {
-  content: "";
-  display: inline-block;
-  box-sizing: border-box;
-  position: relative;
-  width: 8px;
-  height: 8px;
-  border-bottom: 2px solid;
-  border-right: 2px solid;
-  transform: rotate(-45deg);
-  top: -1px;
-  margin-left: 10px;
-}
-
 .form-control {
   display: block;
   width: 100%;
@@ -692,9 +674,15 @@ a {
 }
 
 .rg-footer-toptitle {
-  font-size: 1.625rem;
+  font-size: 1.375rem;
   color: var(--rg-green);
   margin-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+  .rg-footer-toptitle {
+    font-size: 1.5625rem;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -705,6 +693,13 @@ a {
 
 .rg-footer-top li:not(:last-child) {
   margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+@media (min-width: 768px) {
+  .rg-footer-top li:not(:last-child) {
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -716,9 +711,15 @@ a {
 .rg-footer-top a {
   text-decoration: none;
   color: var(--rg-white);
-  font-size: 1.25rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
+}
+
+@media (min-width: 992px) {
+  .rg-footer-top a {
+    font-size: 1.125rem;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -751,6 +752,10 @@ a {
   list-style: none;
 }
 
+.rg-footer a:hover {
+  text-decoration: underline;
+}
+
 .rg-footer-form-desc {
   font-size: 1.375rem;
   color: var(--rg-gray-300);
@@ -771,6 +776,12 @@ a {
 }
 
 @media (min-width: 992px) {
+  .rg-footer-nav a {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
   .rg-footer-nav a {
     font-size: 1.125rem;
   }
@@ -827,37 +838,41 @@ a {
   margin-bottom: 0;
 }
 
-.social-icon {
+.rg-footer .fab {
   font-style: normal;
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
   color: var(--rg-white);
 }
 
-.social-icon svg {
+.rg-footer .fab svg {
   width: 20px;
   height: 20px;
 }
 
-.social-icon.twitter {
+.rg-footer .fab.fa-twitter {
   background-color: #00acee;
 }
 
-.social-icon.linkedin {
+.rg-footer .fab.fa-linkedin-in {
   background-color: #0e76a8;
 }
 
-.social-icon.facebook {
+.rg-footer .fab.fa-facebook-f {
   background-color: #4267B2;
 }
 
-.social-icon.youtube {
+.rg-footer .fab.fa-youtube {
   background-color: #FF0000;
+}
+
+.rg-footer .social-icons a:hover {
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {

@@ -4,15 +4,22 @@
     &-top {
         border-bottom: 1.5px solid #707070;
         &title {
-            font-size: toRem(26);
+            font-size: toRem(22);
             color: var(--rg-green);
             margin-bottom: 30px;
+            @include lg {
+                font-size: toRem(25);
+            }
             @include xxl {
                 font-size: toRem(30);
             }
         }
         li:not(:last-child) {
             margin-bottom: 15px;
+            margin-right: 15px;
+            @include md {
+                margin-right: 20px;
+            }
             @include lg {
                 margin-right: 50px;
             }
@@ -20,13 +27,15 @@
         a {
             text-decoration: none;
             color: var(--rg-white);
-            font-size: toRem(20);
+            font-size: toRem(16);
             display: flex;
             align-items: center;
+            @include lg {
+                font-size: toRem(18);
+            }
             @include xxl {
                 font-size: toRem(28);
             }
-
         }
         i {
             display: inline-block;
@@ -47,6 +56,9 @@
         margin-left: 0;
         list-style: none;
     }
+    a:hover {
+        text-decoration: underline;
+    }
     &-form-desc {
         font-size: toRem(22);
         color: var(--rg-gray-300);
@@ -61,6 +73,9 @@
             color:#C9C9C9;
             text-decoration: none;
             @include lg {
+                font-size: toRem(16);
+            }
+            @include xxl {
                 font-size: toRem(18);
             }
         }
@@ -104,32 +119,35 @@
         padding-block: 30px;
         margin-bottom: 0;
     }
-}
-.social-icon {
-    font-style: normal;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    color: var(--rg-white);
-    svg {
-        width: 20px;
-        height: 20px;
+    .fab {
+        font-style: normal;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        color: var(--rg-white);
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+        &.fa-twitter {
+            background-color: #00acee;
+        }
+        &.fa-linkedin-in {
+            background-color: #0e76a8;
+        }
+        &.fa-facebook-f {
+            background-color: #4267B2;
+        }
+        &.fa-youtube {
+            background-color: #FF0000
+            ;
+        }
     }
-    &.twitter {
-        background-color: #00acee;
-    }
-    &.linkedin {
-        background-color: #0e76a8;
-    }
-    &.facebook {
-        background-color: #4267B2;
-    }
-    &.youtube {
-        background-color: #FF0000
-        ;
+    .social-icons a:hover {
+        text-decoration: none;
     }
 }

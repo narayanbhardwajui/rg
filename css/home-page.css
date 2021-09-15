@@ -151,19 +151,25 @@
 }
 
 .rg-home-corpbanner:before {
-  left: 15%;
+  left: 1%;
   bottom: -10%;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   .rg-home-corpbanner:before {
     left: 10%;
   }
 }
 
 .rg-home-corpbanner:after {
-  right: 15%;
+  right: 1%;
   top: -10%;
+}
+
+@media (min-width: 768px) {
+  .rg-home-corpbanner:after {
+    right: 1%;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -344,18 +350,31 @@
   color: var(--rg-primary);
 }
 
-.rg-home-news .slick-track {
-  margin-inline: -15px;
+.rg-home-news .slick-arrow {
+  right: 10px;
+  left: auto;
+  top: 40%;
+  z-index: 10;
 }
 
-.rg-home-news .slick-arrow {
-  right: 25px;
-  left: auto;
-  top: -50px;
+@media (min-width: 768px) {
+  .rg-home-news .slick-arrow {
+    top: -50px;
+    right: 25px;
+    left: auto;
+  }
 }
 
 .rg-home-news .slick-prev {
-  right: 80px;
+  left: 10px;
+  right: auto;
+}
+
+@media (min-width: 768px) {
+  .rg-home-news .slick-prev {
+    right: 80px;
+    left: auto;
+  }
 }
 
 /*testmonial section*/
@@ -428,7 +447,8 @@
   font-size: 1.5rem;
 }
 
-.rg-home-testmcontent h3, .rg-home-testmcontent p {
+.rg-home-testmcontent h3,
+.rg-home-testmcontent p {
   font-size: 1.25rem;
 }
 

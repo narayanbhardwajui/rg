@@ -29,22 +29,5 @@
         color: var(--rg-white);
         border-radius: 10px;
     }
-    &-icon {
-        position: relative;
-        &::after {
-            content: "";
-            display: inline-block;
-            box-sizing: border-box;
-            position: relative;
-            width: 8px;
-            height: 8px;
-            border-bottom: 2px solid;
-            border-right: 2px solid;
-            transform: rotate(
-        -45deg);
-            top: -1px;
-            margin-left: 10px;
-        }
-    }
 }
 
