@@ -1,0 +1,46 @@
+/**********BUTTON CSS**********/
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--rg-primary);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 2px solid var(--rg-primary);
+    padding: 0.5rem 2.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-flat {
+    background-color: var(--rg-primary);
+    color: var(--rg-white);
+    border-radius: 10px;
+}
+
+.btn-icon {
+    position: relative;
+    &::after {
+        content: "";
+        display: inline-block;
+        box-sizing: border-box;
+        position: relative;
+        width: 8px;
+        height: 8px;
+        border-bottom: 2px solid;
+        border-right: 2px solid;
+        transform: rotate(
+    -45deg);
+        top: -1px;
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'base';
+@import 'helper';
+
+
+
+/*COMPONENTS*/
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/accordin';
+
+/*VENDORS*/
+@import 'vendors/slick';
+@import 'vendors/slick-theme';
+
+/*PAGES*/
+@import 'pages/home';
+

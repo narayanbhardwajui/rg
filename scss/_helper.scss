@@ -1,0 +1,102 @@
+.col {
+    flex: 1 1 0%;
+}
+.rg-col-50 {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding-inline: 15px;
+}
+
+.rg-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -15px;
+}
+
+@media (max-width: 767px) {
+    .rg-xs-100 {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
+    } 
+}
+
+.comman-title {
+    color: var(--rg-primary);
+    font-size: toRem(24);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+    margin-bottom: 30px;
+    @include lg {
+        font-size: toRem(34);
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--rg-primary);
+    }
+}
+.spacer-70 {
+    padding-block: 70px;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+.items-center {
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-none {
+    list-style: none;
+}
+
+.rg-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--rg-white);
+    border: 2px solid #E8E8E8;
+    box-shadow: 0px 1px 30px #A8A8A831;
+    border-radius: toRem(12);
+
+}
+
+.arrow-r-icon {
+    background: url(../images/chev-right.svg) no-repeat center;
+    width: 10px;
+    display: inline-block
+}
