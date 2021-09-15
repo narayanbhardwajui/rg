@@ -13,7 +13,7 @@
     font-style: normal;
 }
 .accordion-header {
-    font-size: toRem(20);
+    font-size: toRem(18);
     color: var(--rg-black);
     position: relative;
     display: flex;
@@ -22,7 +22,13 @@
     border-bottom: 2px solid var(--rg-gray-300);
     padding-bottom: 10px;
     cursor: pointer;
+    &:hover {
+        color: var(--rg-primary);
+    }
     @include lg {
+        font-size: toRem(21);
+    }
+    @include xxl {
         font-size: toRem(25);
     }
     &::after {
@@ -41,13 +47,22 @@
 
 .accordion-body-heading {
     color: var(--rg-black);
-    font-size: toRem(20);
+    font-size: toRem(16);
+    @include lg {
+        font-size: toRem(18);
+    }
+    @include xxl {
+        font-size: toRem(20);
+    }
 }
 
 .accordion-body-desc {
-    font-size: toRem(16);
+    font-size: toRem(14);
     margin-bottom: 0;
     @include lg {
+        font-size: toRem(15);
+    }
+    @include xxl {
         font-size: toRem(18);
     }
 }

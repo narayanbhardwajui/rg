@@ -29,6 +29,9 @@
     padding-bottom: 4px;
     margin-bottom: 30px;
     @include lg {
+        font-size: toRem(30);
+    }
+    @include xxl {
         font-size: toRem(34);
     }
     &::before {
@@ -44,17 +47,18 @@
 .spacer-70 {
     padding-block: 70px;
 }
+.mb-0 {
+    margin-bottom: 0;
+}
 .mb-15 {
     margin-bottom: 15px;
-}
-.mt-30 {
-    margin-top: 30px;
 }
 .mb-30 {
     margin-bottom: 30px;
 }
-.mb-0 {
-    margin-bottom: 0;
+
+.mt-30 {
+    margin-top: 30px;
 }
 
 .text-center {
@@ -64,6 +68,10 @@
 .d-flex {
     display: flex;
 }
+.d-none {
+    display: none;
+}
+
 .items-center {
     align-items: center;
 }

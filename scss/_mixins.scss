@@ -4,7 +4,7 @@
     @return $remValue;
 }
 
-
+/*media queries*/
 @mixin xxl {
     @media (min-width: 1400px) {
         @content;
@@ -12,13 +12,13 @@
 }
 
 @mixin xl {
-    @media (min-width: 1280px) {
+    @media (min-width: 1200px) {
         @content;
     }
 }
 
 @mixin lg {
-    @media (min-width: 1024px) {
+    @media (min-width: 992px) {
         @content;
     }
 }
@@ -27,4 +27,18 @@
     @media (min-width: 768px) {
         @content;
     }
+}
+
+/*disable hover on touch devices*/
+@mixin d-hover {
+    @media (hover: hover) {
+        @content;
+    }
+}
+
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }

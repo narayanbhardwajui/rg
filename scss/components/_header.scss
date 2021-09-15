@@ -1,77 +1,94 @@
 /**********HEADER CSS**********/
-%flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .rg-header {
     @extend %flex;
-    flex-wrap: wrap;
-    padding: 15px;
     box-shadow: 0px 3px 16px #00000029;
-    @include md {
-        padding: 23px 33px;
+    padding-block: 15px;
+    @include lg {
+        padding-block: 0;
+    }
+    .rg-row {
+        justify-content: space-between;
+        margin-inline: 0;
     }
     &-top {
-        padding-block: 10px;
         background: var(--rg-primary);
-        color: var(--rg-white);
-        font-size: toRem(14);
-        display: none;
+        font-size: toRem(16);
+        color: #eee;
+        @extend .d-none;
         @include md {
             display: block;
+        }
+        i {
+            margin-right: 8px;
+        }
+        a{
+            color: #eee;
+            display: inline-block;
+            transition: 0.3s ease-in-out;
+        }
+        &left {
+            li {
+                @extend .d-flex;
+                @extend .items-center;
+                padding: 15px;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+                @include lg {
+                    padding: 15px 30px;
+                }
+                @include d-hover {
+                    &:hover {
+                        background: rgba(0,0,0,0.2);
+                    }
+                }
+            }
+            li:not(:last-child) {
+                border-right:1px solid  rgba(255,255,255,0.1);
+            }
+        }
+        &right {
+            a:hover {
+                color: #000;
+            }
+            i {
+                font-size: toRem(20);
+                margin-inline: 10px;
+            }
         }
         .rg-row {
             justify-content: space-between;
         }
-        a {
-            color: var(--rg-white);
+    }
+    &-logo {
+        max-width: 160px;
+        image-rendering: pixelated;
+        @include md {
+            max-width: 180px;
         }
-        .social-icon {
-            background-color: #fff;
-            color: #000;
-            width: 25px;
-            height: 25px;
-            svg {
-                width: 15px;
-                height: 15px;
-            }
-        }
-        &left {
-            >:not([hidden])~:not([hidden]) {
-                margin-left: 1rem;
-            }
-        }
-        &-icon {
-            width: 16px;
-            display: inline-block;
-            color: #fff;
-            margin-right: 10px;
-        }
+
     }
     &-nav {
-        display: none;
+        @extend .d-none;
         flex: 1 0 100%;
         @include lg {
             display: block;
             flex: initial;
-            
         }
         margin-left: auto;
         ul {
-            list-style: none;
-            margin: 0;
             @extend %flex;
         }
         &-item {
             position: relative;
-            padding-block: 10px;
-            &:hover {
-                .rg-header-submenu {
-                    opacity: 1;
-                    left: 0;
-                    z-index: 9999;
+            @media (min-width:992px) {
+                &:hover {
+                    background-color: rgba(25,112,61,0.1);
+                    transition: 0.3s ease-in-out;
+                    .rg-header-submenu {
+                        opacity: 1;
+                        left: 0;
+                        z-index: 9999;
+                    }
                 }
             }
         }
@@ -80,14 +97,13 @@
             font-weight: 400;
             color: var(--rg-gray-100);
             text-decoration: none;
-            padding-inline: 15px;
+            padding: 8px 15px;
             font-weight: 500;
             text-transform: uppercase;
-            @include md {
+            display: block;
+            @include lg {
                 font-size: toRem(16);
-            }
-            @include xxl {
-                font-size: toRem(19);
+                padding: 30px 15px;
             }
 
             &:hover {
@@ -97,8 +113,14 @@
         &.show {
             display: block;
             background: #1c5f3c;
-            margin-inline: -15px;
             margin-top: 20px;
+            margin-inline: -15px;
+            @include md {
+                margin-inline: -23px;
+            }
+            @include lg {
+                margin-inline: 0;
+            }
             ul {
                 display: block;
                 .rg-header-nav-link {
@@ -112,26 +134,36 @@
         }
     }
     &-submenu {
-        background-color: #ffffff;
-        box-shadow: 0 1px 2px;
+        background-color: var(--rg-white);
+        box-shadow: 0 13px 42px 11px rgba(0, 0, 0, 0.05);
         left: -9999px;
-        min-width: 220px;
+        min-width: 240px;
         opacity: 0;
         position: absolute;
         top: 100%;
         transition: opacity 0.4s ease-in-out 0s;
         z-index: -9999;
         display: block !important;
-        .rg-header-nav-link {
-            padding: 8px 15px;
-            display: block;
+        border-radius: 5px;
+        padding: 10px;
+        &:after {
+            content: "";
+            position: absolute;
+            top: -7px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid var(--rg-white);
+        }
+        li:not(:last-child) {
             border-bottom: 1px solid #ddd;
+        }
+        .rg-header-nav-link {
+            padding: 10px 15px;
             font-size: toRem(14);
         }
-    }
-    &-search {
-        margin-inline: 50px;
-        cursor: pointer;
     }
     &-hamburger {
         cursor: pointer;
